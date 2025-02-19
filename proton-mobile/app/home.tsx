@@ -1,15 +1,15 @@
-import { Text, View, StyleSheet } from "react-native";
 import { useTheme } from "../context/ThemeContext";
+import { View, Text, StyleSheet } from "react-native";
 
-export default function Index() {
+const HomeScreen = () => {
   const { theme } = useTheme();
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background }]}>
-      <Text>TESTANDO SE PEGA app/teste.tsx to edit this screen.</Text>
+      <Text style={[styles.text, { color: theme.text }]}>Bem-vindo!</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -21,3 +21,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
+
+export default HomeScreen;

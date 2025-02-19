@@ -13,21 +13,31 @@ export default function SplashScreen() {
     }, 2000);
   }, []);
 
+  const styles = StyleSheet.create({
+    container: {
+      backgroundColor: theme.background,
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    title: {
+      fontSize: 30,
+      color: theme.primary,
+      marginVertical:30,
+    },
+    text: {
+      fontSize: 20,
+      color: theme.primary,
+    },
+  });
+
   return (
-    <View style={[styles.container, { backgroundColor: theme.background }]}>
-      <Text>Carregando...</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Bem Vindo</Text>
+      <Text style={styles.text}>Carregando...</Text>
       <ActivityIndicator size="large" />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  text: {
-    fontSize: 20,
-  },
-});
+

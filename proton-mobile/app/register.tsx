@@ -13,57 +13,62 @@ export default function RegisterScreen() {
 
   const styles = StyleSheet.create({
     container: {
+      backgroundColor: theme.background,
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
     },
     input: {
-      borderColor: theme.primary,
       borderWidth: 1,
+      borderColor: theme.primary,
+      color: theme.text,
       padding: 10,
       marginBottom: 10,
+      borderRadius: 8,
     },
     text: {
       fontSize: 20,
+      color: theme.primary,
     },
     button: {
+      backgroundColor: theme.primary,
       paddingVertical: 12,
       paddingHorizontal: 20,
       marginVertical: 10,
-      borderRadius: 8,
+      borderRadius: 10,
       alignItems: "center",
     },
   });
 
   return (
-    <View style={[styles.container, { backgroundColor: theme.background }]}>
-      <Text style={[styles.text, { color: theme.text }]}>Nome:</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>Nome</Text>
       <TextInput
-      style={[styles.button, { borderColor: theme.primary }]}
+        style={styles.input}
         value={name}
         onChangeText={setName}
       />
-      <Text style={[styles.text, { color: theme.text }]}>Email:</Text>
+      <Text style={styles.text}>Email</Text>
       <TextInput
-      style={[styles.button, { borderColor: theme.primary }]}
+        style={styles.input}
         value={email}
         onChangeText={setEmail}
       />
-      <Text style={[styles.text, { color: theme.text }]}>Senha:</Text>
+      <Text style={styles.text}>Senha</Text>
       <TextInput
-      style={[styles.button, { borderColor: theme.primary }]}
+        style={styles.input}
         secureTextEntry
         value={password}
         onChangeText={setPassword}
       />
       <TouchableOpacity
-        style={[styles.button, { backgroundColor: theme.primary }]}
+        style={styles.button}
         onPress={() => router.replace("/home")}
       >
         <Text style={[styles.text, { color: theme.secondary }]}>Cadastrar</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={[styles.button, { backgroundColor: theme.primary }]}
+        style={styles.button}
         onPress={() => router.back()}
       >
         <Text style={[styles.text, { color: theme.secondary }]}>Voltar</Text>

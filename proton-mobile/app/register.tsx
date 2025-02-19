@@ -32,6 +32,7 @@ export default function RegisterScreen() {
     },
     button: {
       backgroundColor: theme.primary,
+      minWidth: 150,
       paddingVertical: 12,
       paddingHorizontal: 20,
       marginVertical: 10,

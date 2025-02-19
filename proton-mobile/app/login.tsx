@@ -30,6 +30,7 @@ export default function LoginScreen() {
     },
     button: {
       backgroundColor: theme.primary,
+      minWidth: 150,
       paddingVertical: 12,
       paddingHorizontal: 20,
       marginVertical: 10,
@@ -62,6 +63,11 @@ export default function LoginScreen() {
       style={styles.button}
        onPress={() => router.push("/register")} >
         <Text style={[styles.text, { color: theme.secondary }]}>Cadastrar</Text>
+       </TouchableOpacity>
+      <TouchableOpacity 
+      style={[styles.button, { backgroundColor: theme.secondary }]}
+       onPress={() => router.replace("/esqueceuSenha")} >
+        <Text style={[styles.text, { color: theme.primary }]}>Esqueceu a senha?</Text>
        </TouchableOpacity>
     </View>
   );
